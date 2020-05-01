@@ -54,9 +54,10 @@ public class ScreenController {
         screen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         screen.setLocationRelativeTo(null);
         screen.setResizable(false);
-        screen.setVisible(true);
         screen.setContentPane(view);
+        screen.setVisible(true);
         screen.pack();
+        view.setVisible(true);
     }
 
     /**
@@ -92,10 +93,14 @@ public class ScreenController {
         view.renderView(brush);
     }
 
+    /**
+     * Paint entire game onto this panel
+     *
+     * @param canvas to paint over this entire panel
+     */
     public void brushCanvas(Image canvas) {
         Graphics g = view.getGraphics();
-        g.drawImage(canvas, 0, 0, ScreenView.PREFERRED_WIDTH, ScreenView.PREFERRED_HEIGHT, null);
+        g.drawImage(canvas, 0, 0,null);
         g.dispose();
     }
-
 }

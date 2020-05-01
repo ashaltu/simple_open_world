@@ -123,7 +123,7 @@ public class PlayerKeyTracker implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         int key = e.getKeyCode();
-
+        System.out.println("Received!");
         if (keyUp(key)) {
             up = false;
             if (!down) dy = 0;

@@ -1,3 +1,4 @@
+import entities.EntityController;
 import screen.ScreenController;
 import screen.ScreenView;
 import status.Status;
@@ -31,12 +32,14 @@ public class GameController {
      * Controllers
      */
     private ScreenController screen;
+    private EntityController entities;
 
     /**
      * MVC architecture where this class is the controller
      */
     public GameController() {
         screen = new ScreenController();
+        entities = new EntityController();
 
         canvas = new BufferedImage(ScreenView.PREFERRED_WIDTH, ScreenView.PREFERRED_HEIGHT, BufferedImage.TYPE_INT_RGB);
         brush = (Graphics2D) canvas.getGraphics();
@@ -47,6 +50,7 @@ public class GameController {
      */
     public void end() {
         screen.end();
+        entities.end();
         // TODO:  Implement end method for all Controllers and delete exception
         throw new RuntimeException("Unimplemented method: end()");
     }
@@ -81,6 +85,7 @@ public class GameController {
      * Update all of the game's models
      */
     public void updateAll() {
+        entities.update();
         screen.update();
         // TODO: update all controllers
     }
@@ -89,6 +94,7 @@ public class GameController {
      * Render all of the game's views
      */
     public void renderAll() {
+        entities.render(brush);
         screen.render(brush);
         // TODO: render all controllers
     }

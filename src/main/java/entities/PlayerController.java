@@ -1,6 +1,7 @@
 package entities;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 /**
  * Control the player's data, rendering, and movement
@@ -13,9 +14,9 @@ public class PlayerController {
     private PlayerView view;
     private PlayerModel model;
 
-    public PlayerController(PlayerView view, PlayerModel model) {
-        this.view = new PlayerView(view.image, view.loc);
-        this.model = new PlayerModel(model.hitbox, model.image);
+    public PlayerController(Rectangle hitbox, BufferedImage image) {
+        this.view = new PlayerView(image, hitbox.getLocation());
+        this.model = new PlayerModel(hitbox, image);
     }
 
     /**

@@ -13,7 +13,8 @@ public class EntityController {
     //private MonsterController monsterController;
 
     public EntityController() {
-        PlayerModel model = new PlayerModel(new Rectangle(20, 20, 20, 20), null);
+        Rectangle hitbox = new Rectangle(20, 20, 20, 20);
+        playerController = new PlayerController(hitbox, null);
     }
 
     /**
@@ -30,5 +31,12 @@ public class EntityController {
      */
     public void render(Graphics2D brush) {
         playerController.render(brush);
+    }
+
+    /**
+     * Safely dispose and remove all entities
+     */
+    public void end() {
+        // TODO: Implement cleaning of EntityController
     }
 }

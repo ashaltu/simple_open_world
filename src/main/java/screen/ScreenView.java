@@ -23,7 +23,6 @@ public class ScreenView extends JPanel implements View {
         this.addKeyListener(new PlayerKeyTracker());
         this.setFocusable(true);
         this.requestFocus();
-        this.setVisible(true);
     }
 
     /**
