@@ -13,12 +13,21 @@ public abstract class EntityView implements View {
     /**
      * View's perspective of the image
      */
-    private BufferedImage image;
-    private Point loc;
+    protected BufferedImage image;
+    protected Point loc;
 
     public EntityView(BufferedImage image, Point loc) {
         this.image = image;
         this.loc = loc;
+    }
+
+    /**
+     * Check if this entity has an image
+     *
+     * @return true if image != null, else false
+     */
+    public boolean hasImage() {
+        return image != null;
     }
 
     /**
