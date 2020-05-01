@@ -42,7 +42,7 @@ public class ScreenController {
         model = new ScreenModel();
         view = new ScreenView();
 
-        // TODO: init rest of components
+        // TODO: Init rest of components for ScreenController
     }
 
     /**
@@ -72,7 +72,7 @@ public class ScreenController {
      * @return the screen's current status: SUCCESS, TIMEOUT, or ERROR
      */
     public Status status() {
-        // TODO:  Implement this method and delete exception
+        // TODO:  Implement usage of status within ScreenController
         throw new RuntimeException("Unimplemented method: endStatus()");
     }
 

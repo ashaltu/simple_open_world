@@ -25,8 +25,12 @@ public class GameController {
     /**
      * Game screen data
      */
-    private ScreenController screen;
     private Status status;
+
+    /**
+     * Controllers
+     */
+    private ScreenController screen;
 
     /**
      * MVC architecture where this class is the controller
@@ -36,8 +40,6 @@ public class GameController {
 
         canvas = new BufferedImage(ScreenView.PREFERRED_WIDTH, ScreenView.PREFERRED_HEIGHT, BufferedImage.TYPE_INT_RGB);
         brush = (Graphics2D) canvas.getGraphics();
-
-        // TODO: implement game controller mechanics
     }
 
     /**
@@ -45,7 +47,7 @@ public class GameController {
      */
     public void end() {
         screen.end();
-        // TODO:  Implement this method and delete exception
+        // TODO:  Implement end method for all Controllers and delete exception
         throw new RuntimeException("Unimplemented method: end()");
     }
 
@@ -80,7 +82,7 @@ public class GameController {
      */
     public void updateAll() {
         screen.update();
-        // TODO: update all components
+        // TODO: update all controllers
     }
 
     /**
@@ -88,7 +90,7 @@ public class GameController {
      */
     public void renderAll() {
         screen.render(brush);
-        // TODO: render all components
+        // TODO: render all controllers
     }
 
     /**
@@ -96,7 +98,7 @@ public class GameController {
      * @return the game's status
      */
     public Status status() {
-        // TODO:  Implement this method and delete exception
+        // TODO:  Implement status for components
         throw new RuntimeException("Unimplemented method: endStatus()");
         // return status;
     }

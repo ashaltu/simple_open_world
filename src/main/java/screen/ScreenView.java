@@ -33,6 +33,6 @@ public class ScreenView extends JPanel implements View {
      */
     @Override
     public void renderView(Graphics2D brush) {
-        // TODO: Implement screen updating
+        // TODO: Implement any updates to the Screen
     }
 }
