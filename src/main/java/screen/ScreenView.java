@@ -1,5 +1,6 @@
 package screen;
 
+import entities.PlayerKeyTracker;
 import view.View;
 
 import javax.swing.*;
@@ -19,8 +20,10 @@ public class ScreenView extends JPanel implements View {
     public ScreenView() {
         this.setLayout(null);
         this.setPreferredSize(new Dimension(PREFERRED_WIDTH, PREFERRED_HEIGHT));
+        this.addKeyListener(new PlayerKeyTracker());
         this.setFocusable(true);
         this.requestFocus();
+        this.setVisible(true);
     }
 
     /**

@@ -6,22 +6,18 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
- * Basic structure of an entity - immutable from outside 'entities' package
+ * Basic structure of an entity
  */
 public abstract class EntityModel implements Model {
 
     /**
      * Essential data for any entity
      */
-    protected double x, y;
-    protected int width, height;
+    protected Rectangle hitbox;
     protected BufferedImage image;
 
-    public EntityModel(double x, double y, int width, int height, BufferedImage image) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
+    public EntityModel(Rectangle hitbox, BufferedImage image) {
+        this.hitbox = hitbox;
         this.image = image;
     }
 
@@ -34,13 +30,17 @@ public abstract class EntityModel implements Model {
         return image != null;
     }
 
+    public Rectangle hitbox() {
+        return new Rectangle(hitbox);
+    }
+
     /**
      * X coordinates of this entity
      *
      * @return x coordinate
      */
     public double x() {
-        return x;
+        return hitbox.x;
     }
 
     /**
@@ -49,7 +49,7 @@ public abstract class EntityModel implements Model {
      * @return y coordinate
      */
     public double y() {
-        return y;
+        return hitbox.y;
     }
 
     /**
@@ -58,7 +58,7 @@ public abstract class EntityModel implements Model {
      * @return entity's width
      */
     public int width() {
-        return width;
+        return hitbox.width;
     }
 
     /**
@@ -67,7 +67,17 @@ public abstract class EntityModel implements Model {
      * @return entity's width
      */
     public int height() {
-        return height;
+        return hitbox.height;
+    }
+
+    /**
+     * Translates this entity by dx, dy
+     *
+     * @param dx translate x by dx
+     * @param dy translate y by dy
+     */
+    public void move(double dx, double dy) {
+        hitbox.translate((int)Math.round(dx), (int)Math.round(dy));
     }
 
     /**
@@ -76,11 +86,13 @@ public abstract class EntityModel implements Model {
      * @return copy of this entity's image
      */
     public BufferedImage image() {
+        /* Returning copy is unnecessary
         BufferedImage b = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
         Graphics2D g = b.createGraphics();
         g.drawImage(image, 0, 0, null);
         g.dispose();
-        return b;
+         */
+        return image;
     }
 
 }
