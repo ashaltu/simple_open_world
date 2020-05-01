@@ -35,7 +35,7 @@ public abstract class EntityModel implements Model {
     }
 
     /**
-     * X coordinates of this entity
+     * X coordinate of this entity
      *
      * @return x coordinate
      */
@@ -44,7 +44,7 @@ public abstract class EntityModel implements Model {
     }
 
     /**
-     * Y coordinates of this entity
+     * Y coordinate of this entity
      *
      * @return y coordinate
      */
