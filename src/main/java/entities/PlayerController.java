@@ -24,6 +24,8 @@ public class PlayerController {
      */
     public void update() {
         model.updateModel();
+        view.setImage(model.image);
+        view.setLoc(model.hitbox.x, model.hitbox.y);
     }
 
     /**

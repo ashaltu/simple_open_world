@@ -68,6 +68,7 @@ public class GameController {
             updateAll();
             renderAll();
             screen.brushCanvas(canvas);
+            brush.clearRect(0, 0, ScreenView.PREFERRED_WIDTH, ScreenView.PREFERRED_HEIGHT);
             elapsed = System.nanoTime() - start;
             wait = TPS - elapsed / 1000000;
             if (wait < 0)
