@@ -8,12 +8,14 @@ import java.awt.*;
 public interface Controller {
 
     /**
-     * Updates all model components of this class
+     * Updates all model components of this controller
      */
     void update();
 
     /**
-     * Updates all view components of this class
+     * Updates all view components of this controller
+     *
+     * @param brush related to component views
      */
     void render(Graphics2D brush);
 
