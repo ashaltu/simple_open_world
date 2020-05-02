@@ -22,7 +22,7 @@ public class PlayerView extends EntityView {
         if (hasImage()) {
             super.renderView(brush);
         }else {
-            brush.setColor(Color.lightGray);
+            brush.setColor(Color.cyan);
             brush.fillRect(loc.x, loc.y, 20, 20);
         }
 
