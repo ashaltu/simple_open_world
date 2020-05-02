@@ -1,6 +1,6 @@
 package screen;
 
-import entities.PlayerKeyTracker;
+import entities.player.PlayerKeyTracker;
 import view.View;
 
 import javax.swing.*;

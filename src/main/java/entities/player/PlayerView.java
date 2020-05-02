@@ -1,4 +1,6 @@
-package entities;
+package entities.player;
+
+import entities.EntityView;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

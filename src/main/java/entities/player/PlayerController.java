@@ -1,4 +1,4 @@
-package entities;
+package entities.player;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -24,8 +24,8 @@ public class PlayerController {
      */
     public void update() {
         model.updateModel();
-        view.setImage(model.image);
-        view.setLoc(model.hitbox.x, model.hitbox.y);
+        view.setImage(model.image());
+        view.setLoc(model.hitbox().x, model.hitbox().y);
     }
 
     /**

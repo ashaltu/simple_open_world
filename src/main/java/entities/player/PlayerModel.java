@@ -1,4 +1,6 @@
-package entities;
+package entities.player;
+
+import entities.EntityModel;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -6,7 +8,7 @@ import java.awt.image.BufferedImage;
 /**
  * Manage data on the player
  */
-public class PlayerModel extends EntityModel{
+public class PlayerModel extends EntityModel {
 
     public static final double MAX_DX = 5;
     public static final double MAX_DY = 5;
