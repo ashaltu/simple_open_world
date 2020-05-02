@@ -2,7 +2,6 @@ package entities;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.security.Key;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +14,6 @@ public class PlayerKeyTracker implements KeyListener {
     public static double dy;
 
     private static Set<Integer> toPress = new HashSet<>();
-    private static Set<Integer> toRelease = new HashSet<>();
 
     /**
      * Only one pair of opposite directions may be true at a time.
