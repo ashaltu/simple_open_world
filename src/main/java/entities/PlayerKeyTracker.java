@@ -6,13 +6,19 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Updates data about clients input
+ * Updates data about clients input on the player
  */
 public class PlayerKeyTracker implements KeyListener {
 
+    /**
+     * Keep track of the velocity the player can move based on input
+     */
     public static double dx;
     public static double dy;
 
+    /**
+     * Keep track of with delayed press
+     */
     private static Set<Integer> toPress = new HashSet<>();
 
     /**
