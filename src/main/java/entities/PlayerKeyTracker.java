@@ -2,6 +2,9 @@ package entities;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.security.Key;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Updates data about clients input
@@ -10,6 +13,9 @@ public class PlayerKeyTracker implements KeyListener {
 
     public static double dx;
     public static double dy;
+
+    private static Set<Integer> toPress = new HashSet<>();
+    private static Set<Integer> toRelease = new HashSet<>();
 
     /**
      * Only one pair of opposite directions may be true at a time.
@@ -47,25 +53,29 @@ public class PlayerKeyTracker implements KeyListener {
         int key = e.getKeyCode();
 
         if (keyUp(key)) {
-            if (up || down) {
+            if (down) {
+                toPress.add(key);
                 return;
             }
             up = true;
             dy = -5;
         } else if (keyDown(key)) {
-            if (up || down) {
+            if (up) {
+                toPress.add(key);
                 return;
             }
             down = true;
             dy = 5;
         } else if (keyLeft(key)) {
-            if (left || right) {
+            if (right) {
+                toPress.add(key);
                 return;
             }
             left = true;
             dx = -5;
         } else if (keyRight(key)) {
-            if (left || right) {
+            if (left) {
+                toPress.add(key);
                 return;
             }
             right = true;
@@ -126,16 +136,36 @@ public class PlayerKeyTracker implements KeyListener {
 
         if (keyUp(key)) {
             up = false;
-            if (!down) dy = 0;
+            if (toPress.contains(KeyEvent.VK_DOWN) || toPress.contains(KeyEvent.VK_S)) {
+                toPress.remove(KeyEvent.VK_DOWN);
+                toPress.remove(KeyEvent.VK_S);
+                down = true;
+                dy = 5;
+            } else if (!down) dy = 0;
         } else if (keyDown(key)) {
             down = false;
-            if (!up) dy = 0;
+            if (toPress.contains(KeyEvent.VK_UP) || toPress.contains(KeyEvent.VK_W)) {
+                toPress.remove(KeyEvent.VK_UP);
+                toPress.remove(KeyEvent.VK_W);
+                up = true;
+                dy = -5;
+            } else if (!up) dy = 0;
         } else if (keyLeft(key)) {
             left = false;
-            if (!right) dx = 0;
+            if (toPress.contains(KeyEvent.VK_RIGHT) || toPress.contains(KeyEvent.VK_D)) {
+                toPress.remove(KeyEvent.VK_RIGHT);
+                toPress.remove(KeyEvent.VK_D);
+                right = true;
+                dx = 5;
+            } else if (!right) dx = 0;
         } else if (keyRight(key)) {
             right = false;
-            if (!left) dx = 0;
+            if (toPress.contains(KeyEvent.VK_LEFT) || toPress.contains(KeyEvent.VK_A)) {
+                toPress.remove(KeyEvent.VK_LEFT);
+                toPress.remove(KeyEvent.VK_A);
+                left = true;
+                dx = -5;
+            } else if (!left) dx = 0;
         }
     }
 
