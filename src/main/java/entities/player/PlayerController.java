@@ -1,12 +1,14 @@
 package entities.player;
 
+import controller.Controller;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
  * Control the player's data, rendering, and movement
  */
-public class PlayerController {
+public class PlayerController implements Controller {
 
     public static final int playerStartX = 20;
     public static final int playerStartY = 20;

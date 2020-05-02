@@ -1,5 +1,6 @@
 package entities;
 
+import controller.Controller;
 import entities.player.PlayerController;
 
 import java.awt.*;
@@ -7,7 +8,7 @@ import java.awt.*;
 /**
  * Manages all entity data, rendering, and movement
  */
-public class EntityController {
+public class EntityController implements Controller {
 
     /**
      * Entity's controllers

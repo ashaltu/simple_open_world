@@ -1,14 +1,15 @@
 package screen;
 
+import controller.Controller;
 import status.Status;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Controller for ScreenModel and ScreenView
+ * controller.Controller for ScreenModel and ScreenView
  */
-public class ScreenController {
+public class ScreenController implements Controller {
 
     private JFrame screen;
     private ScreenModel model;

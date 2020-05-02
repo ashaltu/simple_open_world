@@ -1,5 +1,5 @@
 /**
- * View components in Model-View-Controller design
+ * View components in Model-View-controller.Controller design
  */
 
 package view;
