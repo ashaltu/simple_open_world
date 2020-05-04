@@ -52,7 +52,7 @@ public class Loader {
      * @param width   the width of the crop starting at the x coordinate
      * @param height  the height of the crop starting at the y coordinate
      * @spec.requires file != null, file.endsWith(JPG or JPEG or PNG or BMP or WEBP or GIF),
-     * width > 0, height > 0, x >= 0, x <= originalImage.width-1, y >= 0, y <= originalImage.height-1
+     * width, height are non-negative, x,y are within image's bounds
      * @return the cropped image from the given file name
      */
     public BufferedImage loadCroppedImage(String file, int x, int y, int width, int height) {

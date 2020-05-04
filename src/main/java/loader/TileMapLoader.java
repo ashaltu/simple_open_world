@@ -31,7 +31,7 @@ public class TileMapLoader extends Loader{
      *
      * Example map: createMap('1 1 1 1 1
      *                         1 1 1 1 1
-     *                         1 1 1 1 1')  <- returns a 5x3 map covered in grass blocks,
+     *                         1 1 1 1 1')   ,returns a 5x3 map covered in grass blocks,
      *                                      where the units are blocks (16x16 pixels per block)
      *
      * @param map to be translated into a map image

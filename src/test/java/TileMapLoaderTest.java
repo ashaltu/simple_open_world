@@ -51,5 +51,12 @@ public class TileMapLoaderTest {
         Assert.assertArrayEquals(realMap, tml.stringToIntMap(tml.loadText(filename)));
     }
 
+    @Test (expected = IllegalArgumentException.class)
+    public void badMapTest() {
+        String filename = "bad_map_test.txt";
+        TileMapLoader tml = new TileMapLoader();
+        tml.stringToIntMap(tml.loadText(filename));
+    }
+
 
 }
