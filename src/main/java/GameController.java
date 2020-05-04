@@ -67,6 +67,7 @@ public class GameController {
             start = System.nanoTime();
             updateAll();
             renderAll();
+            // TODO: Move camera over the entire map
             screen.brushCanvas(canvas);
             brush.clearRect(0, 0, ScreenView.PREFERRED_WIDTH, ScreenView.PREFERRED_HEIGHT);
             elapsed = System.nanoTime() - start;
@@ -95,9 +96,9 @@ public class GameController {
      * Render all of the game's views
      */
     public void renderAll() {
-        entities.render(brush);
         screen.render(brush);
-        // TODO: render all controllers
+        entities.render(brush);
+        // TODO: render all controllers, manage background, middle ground, foreground
     }
 
     /**
