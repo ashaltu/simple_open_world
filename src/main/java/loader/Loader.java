@@ -21,6 +21,7 @@ public class Loader {
      *
      * @return the image to be loaded from the /resources folder
      * @param file to be loaded, must be of type JPG, JPEG, PNG, BMP, WEBP, or GIF
+     * @throws IllegalArgumentException if file == null or !file.endsWith(JPG or JPEG or PNG or BMP or WEBP or GIF)
      * @spec.requires file != null, file.endsWith(JPG or JPEG or PNG or BMP or WEBP or GIF)
      */
     public BufferedImage loadImage(String file) {
@@ -64,6 +65,7 @@ public class Loader {
      *
      * @return the text of the specified file
      * @param file the name of the txt
+     * @throws IllegalArgumentException if file == null or !file.endsWith(TXT)
      * @spec.requires file != null, file.endsWith(TXT)
      */
     public String loadText(String file) {

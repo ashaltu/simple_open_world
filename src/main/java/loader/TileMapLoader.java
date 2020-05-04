@@ -59,6 +59,8 @@ public class TileMapLoader extends Loader{
      *
      * @param map to be parsed for block ID's
      * @return 2D array of the parsed map by their block ID's
+     * @throws IllegalArgumentException if !types.contains(currBlockID)
+     * @spec.requires types.contains(currBlockID)
      */
     public int[][] stringToIntMap(String map) {
         int columns = map.split("\n")[0].split(" ").length;  // # of columns/width - next line char
@@ -71,11 +73,11 @@ public class TileMapLoader extends Loader{
                 .collect(Collectors.toList());
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                int currBlock = cleaned.get(i * columns + j);
-                if (BlockTypes.validBlockID(currBlock)) {
-                    intMap[i][j] = currBlock;
+                int currBlockID = cleaned.get(i * columns + j);
+                if (BlockTypes.validBlockID(currBlockID)) {
+                    intMap[i][j] = currBlockID;
                 } else {
-                    throw new IllegalArgumentException("Invalid map, block " + currBlock + " not a valid type of block");
+                    throw new IllegalArgumentException("Invalid map, block " + currBlockID + " not a valid type of block");
                 }
             }
 

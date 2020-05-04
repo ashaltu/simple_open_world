@@ -45,9 +45,11 @@ public class BlockTypes {
      *
      * @param blockID the id of the block type
      * @return the name of the associated blockID
+     * @throws IllegalArgumentException if !types.contains(blockID)
+     * @spec.requires types.contains(blockID)
      */
     public static String blockIDToName(int blockID) {
-        if (!blockIDToText.containsKey(blockID)) {
+        if (!types.contains(blockID)) {
             throw new IllegalArgumentException("Invalid map, block " + blockID + " not a valid type of block");
         }
 

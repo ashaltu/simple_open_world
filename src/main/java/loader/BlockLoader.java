@@ -26,6 +26,8 @@ public class BlockLoader extends Loader{
      * Helper function to load images by their blockIDS
      * @param blockID to used in returning the associated block image
      * @return image of associated blockID
+     * @throws IllegalArgumentException if !types.contains(blockID)
+     * @spec.requires types.contains(blockID)
      */
     public BufferedImage loadBlock(int blockID) {
         if (!blockIDToImage.containsKey(blockID)) {
