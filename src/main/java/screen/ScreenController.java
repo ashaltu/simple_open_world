@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * controller.Controller for ScreenModel and ScreenView
+ * Controller for ScreenModel and ScreenView
  */
 public class ScreenController implements Controller {
 
