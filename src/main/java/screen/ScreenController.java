@@ -28,6 +28,7 @@ public class ScreenController implements Controller {
                     JOptionPane.YES_NO_OPTION);
             if (r == JOptionPane.NO_OPTION) {
                 System.exit(0);
+                // TODO: change to safer exit
             }
         }
 

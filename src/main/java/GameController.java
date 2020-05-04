@@ -14,7 +14,7 @@ public class GameController {
     /**
      * Refresh rate data
      */
-    private final int FPS = 60;
+    private static final int FPS = 60;
     private long TPS = 1000 / FPS;
 
     /**

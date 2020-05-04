@@ -19,6 +19,9 @@ public class Launcher {
             case SUCCESS:
                 System.out.println("Game ended successfully");
                 break;
+            default:
+                System.out.println("Unknown game ending state");
+                break;
         }
         game.end();
     }
