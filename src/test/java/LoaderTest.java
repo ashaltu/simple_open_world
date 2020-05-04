@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.Objects;
 
 /**
- * Test Loader implementation of loadText
+ * Test Loader methods
  */
 public class LoaderTest {
 

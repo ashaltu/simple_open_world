@@ -1,8 +1,10 @@
-import loader.Loader;
 import loader.TileMapLoader;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * Test TileMapLoader methods
+ */
 public class TileMapLoaderTest {
 
     @Test
