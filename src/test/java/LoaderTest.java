@@ -38,4 +38,25 @@ public class LoaderTest {
                 "the number of extra whitespaces\n" +
                 "in this file", loader.loadText(filename));
     }
+
+    @Test (expected = NullPointerException.class)
+    public void nonExistentTest() {
+        String filename = "baloney_non_existent_map.txt";
+        Loader loader = new Loader();
+        loader.loadText(filename);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void invalidFilenameTest() {
+        String filename = "real_file_seriously_map.jk";
+        Loader loader = new Loader();
+        loader.loadText(filename);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void nullFilenameTest() {
+        String filename = null;
+        Loader loader = new Loader();
+        loader.loadText(filename);
+    }
 }

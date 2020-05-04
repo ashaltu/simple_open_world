@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * Load any kind of text, png, or jpg file. Place files in /resources folder
@@ -66,6 +65,7 @@ public class Loader {
      * @return the text of the specified file
      * @param file the name of the txt
      * @throws IllegalArgumentException if file == null or !file.endsWith(TXT)
+     * @throws NullPointerException if file non existent
      * @spec.requires file != null, file.endsWith(TXT)
      */
     public String loadText(String file) {
