@@ -1,0 +1,9 @@
+hello, this test
+is for if multiple lines
+are detected and
+no information
+
+is missed regardless of
+
+the number of extra whitespaces
+in this file
